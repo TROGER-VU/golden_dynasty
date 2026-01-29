@@ -1,153 +1,106 @@
+// components/GoldenDynastyHero.tsx
 "use client";
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
+import Image from "next/image";
 
-/* =========================
-   Card Data
-========================= */
-const SUITS = ["♠", "♥", "♦", "♣"];
-const RANKS = ["A", "K", "Q", "J", "10", "9"];
-
-const getRandomCard = () => ({
-  rank: RANKS[Math.floor(Math.random() * RANKS.length)],
-  suit: SUITS[Math.floor(Math.random() * SUITS.length)],
-});
-
-/* =========================
-   Card Component
-========================= */
-const Card = ({ index }: { index: number }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [cardFace, setCardFace] = useState(getRandomCard);
-
-  const handleEnter = () => setIsFlipped(true);
-  const handleLeave = () => {
-    setIsFlipped(false);
-    setTimeout(() => {
-      setCardFace(getRandomCard());
-    }, 300);
-  };
-
-  const isRed = cardFace.suit === "♥" || cardFace.suit === "♦";
-
-  return (
-    <div
-      className="relative w-40 h-64 md:w-84 md:h-124 perspective-1000 cursor-pointer pointer-events-auto"
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
-    >
-      <motion.div
-        initial={{ y: 60, opacity: 0, rotate: index % 2 === 0 ? 2 : -2 }}
-        animate={{
-          y: 0,
-          opacity: 0.6, // Lower opacity so it feels like a background
-          rotateY: isFlipped ? 180 : 0,
-        }}
-        whileHover={{ opacity: 1, scale: 1.05, z: 50 }}
-        transition={{
-          delay: index * 0.1,
-          rotateY: { duration: 0.6, type: "spring", stiffness: 180, damping: 22 },
-        }}
-        style={{ transformStyle: "preserve-3d" }}
-        className="relative w-full h-full"
-      >
-        {/* FRONT — Card Back */}
-        <div
-          className="absolute inset-0 rounded-2xl border-2 border-amber-600/30 shadow-2xl flex items-center justify-center backface-hidden"
-          style={{
-            background: "linear-gradient(145deg, #111 0%, #000 100%)",
-            backfaceVisibility: "hidden",
-          }}
-        >
-          <div className="absolute inset-3 border border-amber-500/10 rounded-xl" />
-          <div className="flex flex-col items-center gap-3">
-            <div className="text-amber-500 text-4xl drop-shadow-[0_0_10px_rgba(245,158,11,0.6)]">♛</div>
-          </div>
-        </div>
-
-        {/* BACK — Card Face */}
-        <div
-          className="absolute inset-0 rounded-2xl bg-slate-50 p-5 flex flex-col justify-between border-2 border-amber-400 shadow-[0_0_40px_rgba(251,191,36,0.15)] backface-hidden"
-          style={{
-            transform: "rotateY(180deg)",
-            backfaceVisibility: "hidden",
-          }}
-        >
-          <div className={`text-2xl font-serif font-bold ${isRed ? "text-red-600" : "text-gray-900"}`}>
-            {cardFace.rank}
-            <div>{cardFace.suit}</div>
-          </div>
-          <div className={`text-6xl self-center ${isRed ? "text-red-600" : "text-gray-900"}`}>{cardFace.suit}</div>
-          <div className={`text-2xl font-serif font-bold rotate-180 ${isRed ? "text-red-600" : "text-gray-900"}`}>
-            {cardFace.rank}
-            <div>{cardFace.suit}</div>
-          </div>
-        </div>
-      </motion.div>
-    </div>
-  );
-};
-
-/* =========================
-   HERO SECTION
-========================= */
 export default function GoldenDynastyHero() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
+  // Mouse Parallax Logic
+  const x = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [15, -15]), { stiffness: 100, damping: 20 });
+  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-15, 15]), { stiffness: 100, damping: 20 });
+
+  function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = event.clientX - rect.left;
+    const localMouseY = event.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = localMouseY / height - 0.5;
+    x.set(xPct);
+    mouseY.set(yPct);
+  }
+
   return (
-    <section className="relative min-h-screen bg-[#050505] flex items-center justify-center overflow-hidden px-6">
-      
-      {/* 1. BACKGROUND CARDS LAYER */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center gap-4 md:gap-8 pointer-events-none">
-        {[0, 1, 2, 3].map((i) => (
-          <Card key={i} index={i} />
-        ))}
-      </div>
+    <section 
+      ref={ref} 
+      onMouseMove={handleMouseMove}
+      className="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center perspective-1000 bg-[#020202]"
+    >
+      {/* Vibrant Background Spotlights */}
+      <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-amber-600/20 blur-[150px] rounded-full animate-pulse" />
+      <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-red-900/20 blur-[150px] rounded-full" />
 
-      {/* 2. AMBIENT LIGHTING (Between Cards and Text) */}
-      <div className="absolute inset-0 pointer-events-none z-10">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-black/40 backdrop-blur-[1px]" />
-        <div className="absolute -top-1/4 -left-1/4 w-[60%] h-[60%] bg-amber-600/5 blur-[160px] rounded-full" />
-        <div className="absolute -bottom-1/4 -right-1/4 w-[60%] h-[60%] bg-amber-900/10 blur-[160px] rounded-full" />
-      </div>
+      {/* CENTER CONTENT */}
+      <motion.div style={{ y }} className="relative z-20 text-center flex flex-col items-center">
+        
+        {/* REQ 3: COIN LOGO IN CENTER */}
+        <motion.div 
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ duration: 1.5, type: "spring" }}
+          className="relative w-32 h-32 md:w-40 md:h-40 mb-6 drop-shadow-[0_0_35px_rgba(245,158,11,0.4)]"
+        >
+          <div className="absolute inset-0 rounded-full animate-[spin_10s_linear_infinite]">
+             <Image src="/logo.png" alt="Golden Coin" fill className="object-contain" />
+          </div>
+        </motion.div>
 
-      {/* 3. TOP TYPOGRAPHY LAYER */}
-      
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 1 }}
-        className="relative z-20 text-center max-w-4xl"
-      >
-        <h2 className="text-amber-500/70 tracking-[0.8em] uppercase text-xs md:text-sm mb-6 font-semibold">
-          Est. 2026 • The Elite Circle
-        </h2>
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="text-5xl md:text-8xl font-serif font-black tracking-tighter text-transparent bg-clip-text text-gold-metallic drop-shadow-sm"
+        >
+          GOLDEN DYNASTY
+        </motion.h1>
 
-        <h1 className="text-5xl md:text-7xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-400 to-amber-600 leading-none mb-8 drop-shadow-2xl">
-          GOLDEN <br /> DYNASTY
-        </h1>
+        {/* REQ 4: UPDATED TAGLINE */}
+        <motion.p 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="mt-6 text-amber-100/80 text-sm md:text-lg tracking-[0.3em] uppercase font-medium"
+        >
+          Beginner Stakes <span className="#BF953F">•</span> High Standards
+        </motion.p>
 
-        <p className="max-w-md mx-auto text-amber-100/70 text-lg md:text-xl font-light leading-relaxed tracking-wide mb-12">
-          High stakes. Higher standards.
-          <br />
-          The most exclusive poker society on the web.
-        </p>
-
-        {/* CTA */}
-        <div className="flex justify-center">
-          <button className="group relative px-16 py-5 overflow-hidden rounded-sm transition-all">
-            <span className="absolute inset-0 border border-amber-500/50"></span>
-            <span className="absolute inset-0 bg-amber-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-            <span className="relative text-amber-500 group-hover:text-black font-bold uppercase tracking-[0.3em] text-sm">
-              Enter The Lobby
-            </span>
-          </button>
-        </div>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="mt-10 px-10 py-4 bg-gradient-to-r from-amber-600 to-amber-500 text-black font-bold tracking-[0.2em] uppercase rounded-sm shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] transition-all"
+        >
+          Enter The Lobby
+        </motion.button>
       </motion.div>
 
-      {/* Footer */}
-      {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[10px] tracking-[0.5em] text-white/20 uppercase whitespace-nowrap">
-        © Royal Flush Gaming Ltd
-      </div> */}
+      {/* REQ 9: ENGAGING CARDS (Floating 3D Background) */}
+      <motion.div 
+        style={{ rotateX, rotateY }}
+        className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none"
+      >
+        {/* Left Card */}
+        <motion.div 
+          initial={{ x: -200, opacity: 0, rotate: -15 }}
+          animate={{ x: -350, opacity: 0.6, rotate: -15 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="absolute w-64 h-96 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm"
+        />
+        {/* Right Card */}
+        <motion.div 
+          initial={{ x: 200, opacity: 0, rotate: 15 }}
+          animate={{ x: 350, opacity: 0.6, rotate: 15 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="absolute w-64 h-96 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm"
+        />
+      </motion.div>
     </section>
   );
 }

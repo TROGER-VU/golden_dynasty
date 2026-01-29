@@ -39,6 +39,108 @@
   }
 }
 
+@layer utilities {
+  /* THE "TRUE GOLD" METALLIC GRADIENT (Text) */
+  .text-gold-metallic {
+    background: linear-gradient(to bottom, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* THE "TRUE GOLD" BORDER/BACKGROUND */
+  .bg-gold-metallic {
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  }
+  
+  .border-gold-metallic {
+    border-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) 1;
+  }
+
+  /* Cinematic Lighting */
+  .spotlight-glow {
+    background: radial-gradient(circle at center, rgba(191, 149, 63, 0.15) 0%, rgba(0,0,0,0) 70%);
+  }
+}
+
+@layer utilities {
+  .nav-link-gold {
+    @apply text-[#FBF5B7]/70 text-[11px] uppercase tracking-[0.3em] font-medium transition-all duration-300 hover:text-[#BF953F] relative;
+  }
+  
+  .nav-link-gold::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-[1px] bg-[#BF953F] transition-all duration-300;
+  }
+  
+  .nav-link-gold:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  .bg-poker-lounge {
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(191, 149, 63, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(153, 27, 27, 0.05) 0%, transparent 40%),
+      #050505;
+  }
+
+  .gold-dust {
+    background-image: radial-gradient(#BF953F 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+@layer utilities {
+  .bg-obsidian-dynasty {
+    /* Base color: Deep Midnight Black */
+    background-color: #050505;
+    /* The Pattern: Geometric Gold-Etched Lines */
+    background-image: 
+      linear-gradient(30deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111),
+      linear-gradient(150deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111),
+      linear-gradient(30deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111),
+      linear-gradient(150deg, #111 12%, transparent 12.5%, transparent 87%, #111 87.5%, #111),
+      linear-gradient(60deg, #1a1a1a 25%, transparent 25.5%, transparent 75%, #1a1a1a 75%, #1a1a1a),
+      linear-gradient(60deg, #1a1a1a 25%, transparent 25.5%, transparent 75%, #1a1a1a 75%, #1a1a1a);
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+  }
+
+  /* Add a metallic "sheen" that moves over the pattern */
+  .bg-sheen {
+    background: linear-gradient(
+      45deg,
+      transparent 25%,
+      rgba(191, 149, 63, 0.05) 50%,
+      transparent 75%
+    );
+    background-size: 200% 200%;
+    animation: sheen-move 10s infinite linear;
+  }
+
+  @keyframes sheen-move {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); } /* Moves halfway because we doubled the content */
+}
+
+@theme {
+  --color-gold-metallic: #BF953F;
+  
+  @keyframes marquee {
+    from { transform: translateX(0%); }
+    to { transform: translateX(-50%); }
+  }
+
+  --animation-marquee: marquee 40s linear infinite;
+}
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {

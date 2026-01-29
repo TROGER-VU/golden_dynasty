@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "Golden Dynasty | The Elite Poker Society",
   description: "High stakes. Higher standards. Join the world's most exclusive poker society for online precision and luxury live events.",
   keywords: ["Poker", "High Stakes", "Golden Dynasty", "Tournament", "Online Gaming"],
+  icons: {
+    icon: "/logo2.png", // This sets your logo as the browser tab favicon
+  },
 };
 
 export default function RootLayout({
