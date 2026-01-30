@@ -67,7 +67,7 @@ const Navbar = () => {
             <div className="relative w-20 h-20 md:w-24 md:h-24 -my-8 group">
               <div className="absolute inset-0 bg-[#BF953F] blur-[30px] opacity-10 group-hover:opacity-30 transition-opacity" />
               <div className="w-full h-full animate-[spin_10s_linear_infinite]">
-                <Image src="/logo.png" alt="Coin" fill className="object-contain rounded-full" />
+                <Image src="/logo.png" alt="Coin" fill className="object-contain rounded-full scale-100" />
               </div>
             </div>
           </div>

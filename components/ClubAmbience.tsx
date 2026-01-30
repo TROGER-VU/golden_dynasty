@@ -108,7 +108,7 @@ export default function ClubAmbience() {
           className="text-center mb-20 md:mb-24 relative px-2"
         >
           <div className="hidden md:block absolute left-1/2 -translate-x-1/2 -top-12 w-px h-12 bg-gradient-to-b from-[#BF953F] to-transparent" />
-          <p className="text-gray-300 text-xl md:text-4xl lg:text-5xl font-serif italic tracking-tight whitespace-normal md:whitespace-nowrap leading-relaxed">
+          <p className="text-gray-300 text-2xl md:text-4xl lg:text-5xl font-serif italic tracking-tight whitespace-normal md:whitespace-nowrap leading-relaxed">
             Experience the <span className="text-white font-bold not-italic">Dynasty</span>. <br className="md:hidden" />
             High Stakes. <span className="text-[#BF953F] font-bold not-italic">Real Thrills.</span>
           </p>

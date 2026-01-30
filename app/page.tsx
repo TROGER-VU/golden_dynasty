@@ -4,19 +4,13 @@ import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import PreLoader from "@/components/PreLoader"; // Use the Chip Stack Code provided previously
 import Navbar from "@/components/Navbar";
-import GoldenDynastyHero from "@/components/GoldenDynastyHero";
-import WhyUs from "@/components/WhyUs";
-import Amenities from "@/components/Amenities";
-import MediaGallery from "@/components/MediaGallery";
-import ContactUs from "@/components/ContactUs"; // Use previous code
-import Footer from "@/components/Footer"; // Use previous code
-import ExperienceSection from "@/components/ExperienceSection";
 import Hero from "@/components/Hero";
 import ClubAmbience from "@/components/ClubAmbience";
 import LiveFloor from "@/components/LiveFloor";
 import MembershipPerks from "@/components/MembershipPerks";
 import TournamentCalendar from "@/components/TournamentCalendar";
 import TrustFooter from "@/components/TrustFooter";
+import ContactUs from "@/components/ContactUs";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
