@@ -118,9 +118,9 @@ export default function ClubAmbience() {
 
 const SectionHeader = () => (
   <div className="mb-12 md:mb-16">
-    <h2 className="text-[#BF953F] text-[10px] md:text-xs font-bold uppercase tracking-[0.5em] mb-4">
+    {/* <h2 className="text-[#BF953F] text-[10px] md:text-xs font-bold uppercase tracking-[0.5em] mb-4">
       The Venue
-    </h2>
+    </h2> */}
     <h3 className="text-3xl md:text-6xl font-serif text-white leading-tight">
       Elite Infrastructure. <br />
       <span className="text-gold-metallic">

@@ -46,7 +46,7 @@ export default function TrustFooter() {
               <p className="text-[#BF953F] text-sm uppercase tracking-[0.4em]">Dynasty</p>
             </div>
           </div>
-          <p className="text-gray-500 text-sm leading-relaxed">
+          <p className="text-gray-500 text-sm font-serif leading-relaxed">
             Kanpur&apos;s premier destination for high-stakes Poker Actions. Where luxury hospitality meets professional grinding.
           </p>
           <div className="flex gap-4">
@@ -68,7 +68,7 @@ export default function TrustFooter() {
         {/* Quick Links */}
         <div>
           <h5 className="text-white font-bold uppercase tracking-widest text-xs mb-6">The Arena</h5>
-          <ul className="space-y-4 text-sm text-gray-500">
+          <ul className="space-y-4 text-sm font-mono text-gray-500">
             {["Tournament Calendar", "Contact", "About Venue", "Rules"].map(
               (link) => (
                 <li key={link} className="hover:text-[#BF953F] cursor-pointer transition-colors">
@@ -93,8 +93,8 @@ export default function TrustFooter() {
                   <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <span className="leading-relaxed group-hover:text-gray-300 transition-colors">
-                Civil Lines, Kanpur,<br /> Uttar Pradesh, 208001
+              <span className="leading-relaxed font-mono group-hover:text-gray-300 transition-colors">
+                Rajawat The Fern - An Ecotel Hotel, Kanpur
               </span>
             </li>
             {/* Phone */}
@@ -104,7 +104,7 @@ export default function TrustFooter() {
                   <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <span className="group-hover:text-gray-300 transition-colors">+91 98765 43210</span>
+              <span className="group-hover:text-gray-300 font-mono transition-colors">+91 73767 27375</span>
             </li>
             {/* Email */}
             <li className="flex gap-4 group items-center">
@@ -113,7 +113,7 @@ export default function TrustFooter() {
                   <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <span className="group-hover:text-gray-300 transition-colors">contact@goldendynasty.club</span>
+              <span className="group-hover:text-gray-300 font-mono transition-colors">contact@goldendynasty.club</span>
             </li>
           </ul>
         </div>
@@ -167,7 +167,7 @@ export default function TrustFooter() {
 
       {/* Floating WhatsApp Button */}
       <motion.a
-        href="https://wa.me/919876543210"
+        href="https://wa.me/917376727375"
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.05 }}

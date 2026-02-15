@@ -30,7 +30,7 @@ export default function TournamentCalendar() {
             viewport={{ once: true }}
           >
             <h2 className="text-[#BF953F] text-xs font-bold uppercase tracking-[0.5em] mb-4">
-              The Schedule
+              Tournament Schedule
             </h2>
             <h3 className="text-4xl md:text-5xl font-serif text-white">
               The Arena <span className="text-gold-metallic">Awaits.</span>

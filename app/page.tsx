@@ -12,6 +12,7 @@ import MembershipPerks from "@/components/MembershipPerks";
 import TournamentCalendar from "@/components/TournamentCalendar";
 import TrustFooter from "@/components/TrustFooter";
 import ContactUs from "@/components/ContactUs";
+import MapSection from "@/components/MapSection";
 
 const LOADER_DURATION = 3000;
 
@@ -107,6 +108,7 @@ export default function Home() {
 
             <div className="relative z-10">
               <ClubAmbience />
+              <MapSection/>
               {/* <LiveFloor /> */}
               <CinematicSection />
               {/* <MembershipPerks /> */}

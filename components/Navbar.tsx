@@ -12,7 +12,7 @@ interface NavLink {
 
 const NAV_LINKS: NavLink[] = [
   { name: "Tournaments", href: "#tournaments" },
-  { name: "Careers", href: "#careers" },
+  { name: "Arena", href: "#arena" },
   { name: "Contact", href: "#contact" },
 ];
 

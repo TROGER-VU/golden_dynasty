@@ -32,7 +32,7 @@ export default function ContactUs() {
     },
     {
       label: "Direct Call",
-      value: "+91 98765 43210",
+      value: "+91 73767 27375",
       icon: (
         <svg
           className="w-5 h-5 md:w-6 md:h-6"
@@ -51,7 +51,7 @@ export default function ContactUs() {
     },
     {
       label: "The Arena Location",
-      value: "Civil Lines, Kanpur, UP",
+      value: "Rajawat The Fern - An Ecotel Hotel, Kanpur",
       icon: (
         <svg
           className="w-5 h-5 md:w-6 md:h-6"
@@ -77,7 +77,7 @@ export default function ContactUs() {
   ];
 
   return (
-    <section className="bg-black py-16 md:py-14 px-4 md:px-6 relative overflow-hidden border-t border-white/5">
+    <section className="bg-black py-16 md:py-14 px-4 md:px-6 relative overflow-hidden border-t border-white/5" id="contact">
       {/* Flares */}
       <div className="absolute top-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[#BF953F]/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-[#BF953F]/5 blur-[60px] md:blur-[100px] rounded-full pointer-events-none" />
@@ -122,7 +122,7 @@ export default function ContactUs() {
                   <p className="text-[#BF953F] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-[8px] md:text-[9px] opacity-70">
                     {item.label}
                   </p>
-                  <p className="text-white font-serif text-base md:text-lg tracking-wide break-all sm:break-normal">
+                  <p className="text-white font-mono text-base md:text-lg tracking-wide break-all sm:break-normal">
                     {item.value}
                   </p>
                 </div>
