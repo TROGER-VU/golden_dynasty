@@ -11,7 +11,7 @@ export default function Hero() {
       <BackgroundVideo />
 
       <div className="relative z-10 text-center px-6 max-w-5xl">
-        <LiveStatus />
+        {/* <LiveStatus /> */}
         <Headline />
         <SuitRow />
         <CTASection />
@@ -39,23 +39,23 @@ const BackgroundVideo = () => (
   </div>
 );
 
-const LiveStatus = () => (
-  <motion.div
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.5 }}
-    className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-black/40 border border-[#BF953F]/30 backdrop-blur-md mb-8"
-  >
-    <span className="relative flex h-2 w-2">
-      <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping" />
-      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-    </span>
+// const LiveStatus = () => (
+//   <motion.div
+//     initial={{ opacity: 0, y: -20 }}
+//     animate={{ opacity: 1, y: 0 }}
+//     transition={{ delay: 0.5 }}
+//     className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-black/40 border border-[#BF953F]/30 backdrop-blur-md mb-8"
+//   >
+//     <span className="relative flex h-2 w-2">
+//       <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping" />
+//       <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+//     </span>
 
-    <span className="text-[#FBF5B7] text-[10px] uppercase tracking-[0.4em] font-bold">
-      Live: 18:00 — 06:00
-    </span>
-  </motion.div>
-);
+//     <span className="text-[#FBF5B7] text-[10px] uppercase tracking-[0.4em] font-bold">
+//       Live: 18:00 — 06:00
+//     </span>
+//   </motion.div>
+// );
 
 const Headline = () => (
   <motion.div
@@ -100,12 +100,12 @@ const CTASection = () => (
     className="flex flex-col md:flex-row items-center justify-center gap-6"
   >
     <button className="group relative px-12 py-5 bg-gold-metallic text-black font-bold uppercase tracking-[0.2em] text-xs transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(191,149,63,0.4)]">
-      Book Your Seat
+      Join the Club
     </button>
 
-    <button className="px-12 py-5 border border-white/20 text-white font-bold uppercase tracking-[0.2em] text-xs transition-all hover:bg-white/10 backdrop-blur-sm">
+    {/* <button className="px-12 py-5 border border-white/20 text-white font-bold uppercase tracking-[0.2em] text-xs transition-all hover:bg-white/10 backdrop-blur-sm">
       Become a Member
-    </button>
+    </button> */}
   </motion.div>
 );
 

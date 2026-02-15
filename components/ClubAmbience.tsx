@@ -74,6 +74,33 @@ const HOSPITALITY_ITEMS: HospitalityItem[] = [
     image: "/spa.jpeg",
     delay: 0.3,
   },
+  {
+    title: "Vigilant Security",
+    label: "FORTRESS",
+    description:
+      "Advanced 4K surveillance and 24/7 personal escorts to your vehicle or room.",
+    tag: "DISCREET & SECURE",
+    image: "https://images.unsplash.com/photo-1618371690240-e0d46eead4b8?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // You can use an image of a high-end surveillance monitor or a discreet security professional
+    delay: 0.4,
+  },
+  {
+    title: "The Pool",
+    label: "LEISURE",
+    description:
+      "Get pool access to clear your head after a high-variance session.",
+    tag: "CHILL-OUT ZONE",
+    image: "https://images.unsplash.com/photo-1604348825621-22800b6ed16d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    delay: 1.0,
+  },
+  {
+    title: "The Daily Grind",
+    label: "ACTION",
+    description:
+      "Consistent high-stakes tables running 12 hours a day with professional dealers.",
+    tag: "LIVE NOW",
+    image: "https://images.unsplash.com/photo-1504279807002-09854ccc9b6c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    delay: 0.8,
+  },
 ];
 
 export default function ClubAmbience() {
@@ -96,7 +123,7 @@ const SectionHeader = () => (
     </h2>
     <h3 className="text-3xl md:text-6xl font-serif text-white leading-tight">
       Elite Infrastructure. <br />
-      <span className="text-[#BF953F]">
+      <span className="text-gold-metallic">
         World-Class Hospitality.
       </span>
     </h3>
@@ -162,7 +189,7 @@ const Punchline = () => (
         Golden Dynasty
       </span>
       . High Stakes.{" "}
-      <span className="text-[#BF953F] font-bold not-italic">
+      <span className="text-gold-metallic font-bold not-italic">
         Real Thrills.
       </span>
     </p>

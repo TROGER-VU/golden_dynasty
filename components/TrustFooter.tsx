@@ -69,7 +69,7 @@ export default function TrustFooter() {
         <div>
           <h5 className="text-white font-bold uppercase tracking-widest text-xs mb-6">The Arena</h5>
           <ul className="space-y-4 text-sm text-gray-500">
-            {["Live Table Status", "Tournament Calendar", "VIP Membership", "House Rules"].map(
+            {["Tournament Calendar", "Contact", "About Venue", "Rules"].map(
               (link) => (
                 <li key={link} className="hover:text-[#BF953F] cursor-pointer transition-colors">
                   {link}
@@ -120,42 +120,42 @@ export default function TrustFooter() {
 
         {/* Director's Note */}
         {/* Director's Note - Architectural Layout */}
-<div className="relative border-l border-[#BF953F]/30 pl-8 py-2 md:col-span-1">
-  <motion.div
-    initial={{ opacity: 0, x: 10 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true }}
-  >
-    <h5 className="text-[#BF953F] text-[10px] uppercase tracking-[0.4em] font-bold mb-6">
-      The Vision
-    </h5>
-    
-    <blockquote className="relative">
-      <p className="text-gray-300 font-serif text-base leading-[1.8] mb-6">
-        “We started Golden Dynasty with one goal—to create a venue that I would love to play in myself. A place where respect, class, and high-level competition come together. This is not just a club; it is a home for the true poker aficionado.”
-      </p>
-      
-      <footer className="flex flex-col gap-1">
-        <span className="text-white text-xs font-bold uppercase tracking-widest">
-          Akash Swarnkar
-        </span>
-        <span className="text-gray-600 text-[10px] uppercase tracking-[0.2em]">
-          Founder & Director
-        </span>
-      </footer>
-    </blockquote>
+        <div className="relative border-l border-[#BF953F]/30 pl-8 py-2 md:col-span-1">
+          <motion.div
+            initial={{ opacity: 0, x: 10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h5 className="text-[#BF953F] text-[10px] uppercase tracking-[0.4em] font-bold mb-6">
+              The Vision
+            </h5>
+            
+            <blockquote className="relative">
+              <p className="text-gray-300 font-serif text-sm leading-[1.8] mb-6">
+                “We started Golden Dynasty with one goal—to create a venue that I would love to play in myself. A place where respect, class, and high-level competition come together. This is not just a club; it is a home for the true poker aficionado.”
+              </p>
+              
+              <footer className="flex flex-col gap-1">
+                <span className="text-white text-xs font-bold uppercase tracking-widest">
+                  Akash Swarnkar
+                </span>
+                <span className="text-gray-600 text-[10px] uppercase tracking-[0.2em]">
+                  Founder & Director
+                </span>
+              </footer>
+            </blockquote>
 
-    {/* Subtle Decorative Element */}
-    <div className="mt-8 w-12 h-[1px] bg-gradient-to-r from-[#BF953F] to-transparent opacity-50" />
-  </motion.div>
-</div>
+            {/* Subtle Decorative Element */}
+            <div className="mt-8 w-12 h-[1px] bg-gradient-to-r from-[#BF953F] to-transparent opacity-50" />
+          </motion.div>
+        </div>
       </div>
 
       {/* COPYRIGHT & SEO STRIP */}
       <div className="border-t border-white/5 bg-black py-6">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-600 text-[10px] uppercase tracking-widest">
-            © 2026 Golden Dynasty. All Rights Reserved.
+          <p className="text-gray-600 text-[12px] uppercase tracking-widest">
+            © 2026 <span className="text-gold-metallic">Golden Dynasty.</span> All Rights Reserved.
           </p>
           <div className="flex gap-6 text-gray-600 text-[10px] uppercase tracking-widest">
             <span>Privacy Policy</span>

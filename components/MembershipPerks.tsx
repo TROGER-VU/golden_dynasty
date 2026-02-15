@@ -56,7 +56,7 @@ export default function MembershipPerks() {
       <div className="max-w-7xl mx-auto relative z-10">
         <Header />
         <TierGrid tiers={TIERS} />
-        <CheckPointsStrip />
+        {/* <CheckPointsStrip /> */}
       </div>
     </section>
   );
@@ -132,37 +132,37 @@ const TierCard = ({ tier, delay }: { tier: Tier; delay: number }) => (
 );
 
 /* ---------------- CHECK POINTS STRIP ---------------- */
-const CheckPointsStrip = () => (
-  <div className="mt-16 md:mt-24 p-[1px] bg-gradient-to-r from-transparent via-[#BF953F]/40 to-transparent rounded-2xl md:rounded-full">
-    <div className="bg-black/90 backdrop-blur-md rounded-[15px] md:rounded-full px-6 py-8 md:px-10 md:py-5 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+// const CheckPointsStrip = () => (
+//   <div className="mt-16 md:mt-24 p-[1px] bg-gradient-to-r from-transparent via-[#BF953F]/40 to-transparent rounded-2xl md:rounded-full">
+//     <div className="bg-black/90 backdrop-blur-md rounded-[15px] md:rounded-full px-6 py-8 md:px-10 md:py-5 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
       
-      {/* Info */}
-      <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 text-center md:text-left">
-        <div className="w-14 h-14 rounded-full bg-gradient-to-b from-[#BF953F]/20 to-transparent flex items-center justify-center border border-[#BF953F]/30 shadow-[0_0_20px_rgba(191,149,63,0.1)]">
-          <svg className="w-6 h-6 text-[#FBF5B7]" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M5 16L3 5L8.5 10L12 4L15.5 10L21 5L19 16H5M19 19C19 19.6 18.6 20 18 20H6C5.4 20 5 19.6 5 19V18H19V19Z" />
-          </svg>
-        </div>
-        <div>
-          <p className="text-white font-serif text-lg md:text-xl tracking-tight">Already a Member?</p>
-          <p className="text-gray-500 text-[10px] md:text-xs uppercase tracking-widest mt-1">Track progress & redeem rewards</p>
-        </div>
-      </div>
+//       {/* Info */}
+//       <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 text-center md:text-left">
+//         <div className="w-14 h-14 rounded-full bg-gradient-to-b from-[#BF953F]/20 to-transparent flex items-center justify-center border border-[#BF953F]/30 shadow-[0_0_20px_rgba(191,149,63,0.1)]">
+//           <svg className="w-6 h-6 text-[#FBF5B7]" fill="currentColor" viewBox="0 0 24 24">
+//             <path d="M5 16L3 5L8.5 10L12 4L15.5 10L21 5L19 16H5M19 19C19 19.6 18.6 20 18 20H6C5.4 20 5 19.6 5 19V18H19V19Z" />
+//           </svg>
+//         </div>
+//         <div>
+//           <p className="text-white font-serif text-lg md:text-xl tracking-tight">Already a Member?</p>
+//           <p className="text-gray-500 text-[10px] md:text-xs uppercase tracking-widest mt-1">Track progress & redeem rewards</p>
+//         </div>
+//       </div>
       
-      {/* Input + Button */}
-      <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
-        <div className="relative w-full sm:w-64 md:w-48">
-          <input 
-            type="text" 
-            placeholder="ENTER PLAYER ID" 
-            className="bg-white/5 border border-white/10 rounded-sm px-4 py-3 md:py-2 text-white text-base md:text-xs tracking-[0.2em] focus:border-[#BF953F]/60 focus:outline-none w-full placeholder:text-gray-600 transition-all"
-          />
-        </div>
-        <button className="w-full sm:w-auto whitespace-nowrap px-8 py-4 md:py-2 bg-[#BF953F] text-black font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-[#FBF5B7] transition-all active:scale-95 shadow-lg shadow-[#BF953F]/10">
-          Check Points
-        </button>
-      </div>
+//       {/* Input + Button */}
+//       <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+//         <div className="relative w-full sm:w-64 md:w-48">
+//           <input 
+//             type="text" 
+//             placeholder="ENTER PLAYER ID" 
+//             className="bg-white/5 border border-white/10 rounded-sm px-4 py-3 md:py-2 text-white text-base md:text-xs tracking-[0.2em] focus:border-[#BF953F]/60 focus:outline-none w-full placeholder:text-gray-600 transition-all"
+//           />
+//         </div>
+//         <button className="w-full sm:w-auto whitespace-nowrap px-8 py-4 md:py-2 bg-[#BF953F] text-black font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-[#FBF5B7] transition-all active:scale-95 shadow-lg shadow-[#BF953F]/10">
+//           Check Points
+//         </button>
+//       </div>
 
-    </div>
-  </div>
-);
+//     </div>
+//   </div>
+// );

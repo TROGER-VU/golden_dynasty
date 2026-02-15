@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { FaInstagram, FaTwitter, FaDiscord, FaFacebook } from "react-icons/fa";
 
 interface NavLink {
   name: string;
@@ -12,7 +13,7 @@ interface NavLink {
 const NAV_LINKS: NavLink[] = [
   { name: "Tournaments", href: "#tournaments" },
   { name: "Careers", href: "#careers" },
-  { name: "About", href: "#about" },
+  { name: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -49,6 +50,7 @@ const Navbar = () => {
         }`}
       >
         <div className={containerClasses}>
+          {/* LEFT SECTION */}
           <div className="flex items-center gap-3 md:gap-8">
             <Brand />
 
@@ -61,16 +63,17 @@ const Navbar = () => {
             </div>
           </div>
 
+          {/* CENTER COIN */}
           <DesktopCoin />
 
+          {/* RIGHT SECTION */}
           <div className="flex items-center justify-end gap-4 md:gap-6">
+            <SocialLinks />
             <LiveIndicator />
 
-            <button
-              className="px-6 py-2 hidden md:block bg-gold-metallic text-black text-[10px] font-bold uppercase tracking-widest rounded-sm hover:brightness-110 active:scale-95 transition-all"
-            >
+            {/* <button className="px-6 py-2 hidden md:block bg-gold-metallic text-black text-[10px] font-bold uppercase tracking-widest rounded-sm hover:brightness-110 active:scale-95 transition-all">
               Join Club
-            </button>
+            </button> */}
 
             <MobileMenuToggle
               isOpen={isMenuOpen}
@@ -88,6 +91,8 @@ const Navbar = () => {
     </>
   );
 };
+
+/* ---------------- BRAND ---------------- */
 
 const Brand = () => (
   <div className="flex items-center gap-2 md:gap-3 group">
@@ -111,6 +116,59 @@ const Brand = () => (
   </div>
 );
 
+/* ---------------- SOCIAL LINKS ---------------- */
+
+const SocialLinks = () => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.2 }}
+    className="hidden md:flex items-center gap-4"
+  >
+    <a
+      href="https://instagram.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+      className="text-[#BF953F] hover:text-[#FBF5B7] hover:drop-shadow-[0_0_8px_rgba(191,149,63,0.7)] transition-all duration-300 hover:scale-110"
+    >
+      <FaInstagram size={24} />
+    </a>
+
+    <a
+      href="https://instagram.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+      className="text-[#BF953F] hover:text-[#FBF5B7] hover:drop-shadow-[0_0_8px_rgba(191,149,63,0.7)] transition-all duration-300 hover:scale-110"
+    >
+      <FaFacebook size={24} />
+    </a>
+
+    <a
+      href="https://twitter.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Twitter"
+      className="text-[#BF953F] hover:text-[#FBF5B7] hover:drop-shadow-[0_0_8px_rgba(191,149,63,0.7)] transition-all duration-300 hover:scale-110"
+    >
+      <FaTwitter size={24} />
+    </a>
+
+    {/* <a
+      href="https://discord.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Discord"
+      className="text-[#BF953F] hover:text-[#FBF5B7] hover:drop-shadow-[0_0_8px_rgba(191,149,63,0.7)] transition-all duration-300 hover:scale-110"
+    >
+      <FaDiscord size={18} />
+    </a> */}
+  </motion.div>
+);
+
+/* ---------------- CENTER COIN ---------------- */
+
 const DesktopCoin = () => (
   <div className="hidden md:flex justify-center">
     <div className="relative w-20 h-20 md:w-24 md:h-24 -my-8 group">
@@ -127,14 +185,18 @@ const DesktopCoin = () => (
   </div>
 );
 
+/* ---------------- LIVE INDICATOR ---------------- */
+
 const LiveIndicator = () => (
-  <div className="hidden lg:flex flex-col items-end mr-4">
+  <div className="hidden lg:flex flex-col items-end">
     <span className="text-[10px] text-green-500 font-bold tracking-[0.2em] uppercase flex items-center gap-2">
       <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
       Live: 6PM – 6AM
     </span>
   </div>
 );
+
+/* ---------------- MOBILE TOGGLE ---------------- */
 
 interface MobileMenuToggleProps {
   isOpen: boolean;
@@ -166,6 +228,8 @@ const MobileMenuToggle = ({ isOpen, onToggle }: MobileMenuToggleProps) => (
   </button>
 );
 
+/* ---------------- MOBILE MENU ---------------- */
+
 interface MobileMenuProps {
   isOpen: boolean;
   links: NavLink[];
@@ -182,8 +246,6 @@ const MobileMenu = ({ isOpen, links, onClose }: MobileMenuProps) => (
         transition={{ type: "spring", damping: 25, stiffness: 200 }}
         className="fixed inset-0 z-[90] bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 md:hidden"
       >
-        <div className="absolute w-64 h-64 bg-[#BF953F]/10 blur-[100px] rounded-full" />
-
         {links.map((link, index) => (
           <motion.a
             key={link.name}
@@ -198,14 +260,26 @@ const MobileMenu = ({ isOpen, links, onClose }: MobileMenuProps) => (
           </motion.a>
         ))}
 
-        <motion.button
+        {/* <motion.button
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
           className="mt-4 px-10 py-4 bg-[#BF953F] text-black font-bold uppercase tracking-widest text-xs"
         >
           Join the Dynasty
-        </motion.button>
+        </motion.button> */}
+
+        {/* Mobile Social Icons */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="flex gap-6 mt-6"
+        >
+          <FaInstagram className="text-[#BF953F] hover:text-white transition-colors" size={22} />
+          <FaTwitter className="text-[#BF953F] hover:text-white transition-colors" size={22} />
+          <FaDiscord className="text-[#BF953F] hover:text-white transition-colors" size={22} />
+        </motion.div>
       </motion.div>
     )}
   </AnimatePresence>

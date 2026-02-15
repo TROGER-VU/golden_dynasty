@@ -12,7 +12,7 @@ interface ContactDetail {
 export default function ContactUs() {
   const contactDetails: ContactDetail[] = [
     {
-      label: "Electronic Correspondence",
+      label: "Official Mail",
       value: "contact@goldendynasty.club",
       icon: (
         <svg
@@ -31,7 +31,7 @@ export default function ContactUs() {
       ),
     },
     {
-      label: "Direct VIP Line",
+      label: "Direct Call",
       value: "+91 98765 43210",
       icon: (
         <svg
@@ -77,7 +77,7 @@ export default function ContactUs() {
   ];
 
   return (
-    <section className="bg-black py-16 md:py-24 px-4 md:px-6 relative overflow-hidden border-t border-white/5">
+    <section className="bg-black py-16 md:py-14 px-4 md:px-6 relative overflow-hidden border-t border-white/5">
       {/* Flares */}
       <div className="absolute top-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[#BF953F]/5 blur-[80px] md:blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-[#BF953F]/5 blur-[60px] md:blur-[100px] rounded-full pointer-events-none" />
@@ -92,15 +92,14 @@ export default function ContactUs() {
         >
           <div className="text-center lg:text-left">
             <h2 className="text-[#BF953F] tracking-[0.4em] md:tracking-[0.5em] uppercase text-[10px] md:text-sm font-bold mb-4">
-              Concierge
+              Get in touch
             </h2>
             <h3 className="text-3xl md:text-6xl font-serif text-white mb-6 leading-tight">
-              Direct Access to <br className="hidden md:block" />
-              <span className="text-[#BF953F] italic">The Golden Dynasty.</span>
+              {/* Direct Access to <br className="hidden md:block" /> */}
+              <span className="text-gold-metallic italic">The Golden Dynasty.</span>
             </h3>
             <p className="text-gray-500 font-light leading-relaxed max-w-sm mx-auto lg:mx-0 text-sm md:text-base">
-              Whether it&apos;s a high-stakes seat reservation or a VIP membership
-              inquiry, our concierge is active 24/7.
+              Our team is always ready to connect—whether you have questions, ideas, or partnership opportunities, we&apos;re here to support and collaborate.
             </p>
           </div>
 
@@ -145,12 +144,22 @@ export default function ContactUs() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
               <div className="space-y-2">
                 <label className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-[#BF953F] font-bold ml-1">
-                  Full Name
+                  First Name
                 </label>
                 <input
                   type="text"
                   className="w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 md:py-4 text-sm md:text-base text-white focus:outline-none focus:border-[#BF953F] transition-all placeholder:text-gray-700"
-                  placeholder="Akash Swarnkar"
+                  placeholder="Akash"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-[#BF953F] font-bold ml-1">
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  className="w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 md:py-4 text-sm md:text-base text-white focus:outline-none focus:border-[#BF953F] transition-all placeholder:text-gray-700"
+                  placeholder="Swarnkar"
                 />
               </div>
               <div className="space-y-2">
@@ -163,9 +172,19 @@ export default function ContactUs() {
                   placeholder="+91 00000 00000"
                 />
               </div>
+              <div className="space-y-2">
+                <label className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-[#BF953F] font-bold ml-1">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  className="w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 md:py-4 text-sm md:text-base text-white focus:outline-none focus:border-[#BF953F] transition-all placeholder:text-gray-700"
+                  placeholder="akash@gmail.com"
+                />
+              </div>
             </div>
 
-            <div className="space-y-2">
+            {/* <div className="space-y-2">
               <label className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-[#BF953F] font-bold ml-1">
                 Inquiry Type
               </label>
@@ -192,7 +211,7 @@ export default function ContactUs() {
                   </svg>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="space-y-2">
               <label className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-[#BF953F] font-bold ml-1">
@@ -201,7 +220,7 @@ export default function ContactUs() {
               <textarea
                 rows={4}
                 className="w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 md:py-4 text-sm md:text-base text-white focus:outline-none focus:border-[#BF953F] transition-all placeholder:text-gray-700 resize-none"
-                placeholder="Details of your visit..."
+                placeholder="Enter your message"
               ></textarea>
             </div>
 

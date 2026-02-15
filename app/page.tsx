@@ -72,7 +72,7 @@ const SectionDivider = () => {
         <div className="h-[1px] w-16 bg-gradient-to-l from-transparent to-[#BF953F]/50" />
       </div>
 
-      <p className="text-4xl uppercase tracking-[0.6em] text-[#BF953F] font-bold opacity-80">
+      <p className="text-4xl uppercase tracking-[0.6em] text-gold-metallic font-bold opacity-80">
         The Golden Dynasty Standard
       </p>
     </div>
@@ -107,9 +107,9 @@ export default function Home() {
 
             <div className="relative z-10">
               <ClubAmbience />
-              <LiveFloor />
+              {/* <LiveFloor /> */}
               <CinematicSection />
-              <MembershipPerks />
+              {/* <MembershipPerks /> */}
               <TournamentCalendar />
               <ContactUs />
             </div>
