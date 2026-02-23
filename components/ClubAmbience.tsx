@@ -40,7 +40,7 @@ const CLUB_FEATURES: Feature[] = [
   {
     title: "5-Star Hospitality",
     description: "Luxury Stay, Fine Dining & Wellness.",
-    src: "/property.mp4",
+    src: "/hospitality.mp4",
     type: "video",
     layout: "md:col-span-2 md:row-span-1 h-[300px] md:h-full",
   },
@@ -53,7 +53,7 @@ const HOSPITALITY_ITEMS: HospitalityItem[] = [
     description:
       "Play for 6 hours and unlock a premium 5-star suite on the same floor.",
     tag: "COMPLIMENTARY",
-    image: "/stay.jpeg",
+    image: "/luxuryStay.jpeg",
     delay: 0.1,
   },
   {

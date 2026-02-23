@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { FaInstagram, FaTwitter, FaDiscord, FaFacebook } from "react-icons/fa";
+import Link from "next/link";
 
 interface NavLink {
   name: string;
@@ -125,35 +126,35 @@ const SocialLinks = () => (
     transition={{ delay: 0.2 }}
     className="hidden md:flex items-center gap-4"
   >
-    <a
-      href="https://instagram.com"
+    <Link
+      href="https://www.instagram.com/goldendynasty.knp?igsh=MWJmNjNzaXFkdHprOA=="
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Instagram"
       className="text-[#BF953F] hover:text-[#FBF5B7] hover:drop-shadow-[0_0_8px_rgba(191,149,63,0.7)] transition-all duration-300 hover:scale-110"
     >
       <FaInstagram size={24} />
-    </a>
+    </Link>
 
-    <a
-      href="https://instagram.com"
+    <Link
+      href="https://www.instagram.com/goldendynasty.knp?igsh=MWJmNjNzaXFkdHprOA=="
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Instagram"
       className="text-[#BF953F] hover:text-[#FBF5B7] hover:drop-shadow-[0_0_8px_rgba(191,149,63,0.7)] transition-all duration-300 hover:scale-110"
     >
       <FaFacebook size={24} />
-    </a>
+    </Link>
 
-    <a
-      href="https://twitter.com"
+    <Link
+      href="https://www.instagram.com/goldendynasty.knp?igsh=MWJmNjNzaXFkdHprOA=="
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Twitter"
       className="text-[#BF953F] hover:text-[#FBF5B7] hover:drop-shadow-[0_0_8px_rgba(191,149,63,0.7)] transition-all duration-300 hover:scale-110"
     >
       <FaTwitter size={24} />
-    </a>
+    </Link>
 
     {/* <a
       href="https://discord.com"
@@ -276,9 +277,34 @@ const MobileMenu = ({ isOpen, links, onClose }: MobileMenuProps) => (
           transition={{ delay: 0.5 }}
           className="flex gap-6 mt-6"
         >
-          <FaInstagram className="text-[#BF953F] hover:text-white transition-colors" size={22} />
-          <FaTwitter className="text-[#BF953F] hover:text-white transition-colors" size={22} />
-          <FaDiscord className="text-[#BF953F] hover:text-white transition-colors" size={22} />
+          <Link
+      href="https://www.instagram.com/goldendynasty.knp?igsh=MWJmNjNzaXFkdHprOA=="
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Twitter"
+      className="text-[#BF953F] hover:text-[#FBF5B7] hover:drop-shadow-[0_0_8px_rgba(191,149,63,0.7)] transition-all duration-300 hover:scale-110"
+    >
+    <FaInstagram size={24} />
+    </Link>
+          <Link
+      href="https://www.instagram.com/goldendynasty.knp?igsh=MWJmNjNzaXFkdHprOA=="
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Twitter"
+      className="text-[#BF953F] hover:text-[#FBF5B7] hover:drop-shadow-[0_0_8px_rgba(191,149,63,0.7)] transition-all duration-300 hover:scale-110"
+    >
+    <FaTwitter size={24} />
+
+    </Link>
+          <Link
+      href="https://www.instagram.com/goldendynasty.knp?igsh=MWJmNjNzaXFkdHprOA=="
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Twitter"
+      className="text-[#BF953F] hover:text-[#FBF5B7] hover:drop-shadow-[0_0_8px_rgba(191,149,63,0.7)] transition-all duration-300 hover:scale-110"
+    >
+          <FaFacebook size={24} />
+    </Link>
         </motion.div>
       </motion.div>
     )}
