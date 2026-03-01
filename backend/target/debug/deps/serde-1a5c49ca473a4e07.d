@@ -1,0 +1,14 @@
+C:\Users\sharm\Desktop\golden_dynasty\backend\target\debug\deps\serde-1a5c49ca473a4e07.d: C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs C:\Users\sharm\Desktop\golden_dynasty\backend\target\debug\build\serde-15a02bf4066364b5\out/private.rs
+
+C:\Users\sharm\Desktop\golden_dynasty\backend\target\debug\deps\libserde-1a5c49ca473a4e07.rlib: C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs C:\Users\sharm\Desktop\golden_dynasty\backend\target\debug\build\serde-15a02bf4066364b5\out/private.rs
+
+C:\Users\sharm\Desktop\golden_dynasty\backend\target\debug\deps\libserde-1a5c49ca473a4e07.rmeta: C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs C:\Users\sharm\Desktop\golden_dynasty\backend\target\debug\build\serde-15a02bf4066364b5\out/private.rs
+
+C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs:
+C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs:
+C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs:
+C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs:
+C:\Users\sharm\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs:
+C:\Users\sharm\Desktop\golden_dynasty\backend\target\debug\build\serde-15a02bf4066364b5\out/private.rs:
+
+# env-dep:OUT_DIR=C:\\Users\\sharm\\Desktop\\golden_dynasty\\backend\\target\\debug\\build\\serde-15a02bf4066364b5\\out

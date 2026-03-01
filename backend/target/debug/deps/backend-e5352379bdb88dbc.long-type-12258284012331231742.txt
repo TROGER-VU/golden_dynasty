@@ -1,0 +1,2 @@
+fn(State<Pool<Postgres>>, Extension<Claims>) -> impl std::future::Future<Output = Result<axum::Json<Vec<User>>, (axum::http::StatusCode, std::string::String)>> {get_all_users}
+fn(State<Pool<Postgres>>, Extension<Claims>) -> impl std::future::Future<Output = Result<axum::Json<Vec<User>>, (axum::http::StatusCode, std::string::String)>> {get_all_users}: Handler<_, _>
