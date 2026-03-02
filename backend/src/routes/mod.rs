@@ -4,7 +4,7 @@ use axum::{
     middleware,
 };
 use crate::AppState;
-use crate::handlers::{auth, wallet, cashier, admin};
+use crate::handlers::{auth, wallet, cashier, admin, webhook};
 use crate::auth::middleware::auth_middleware;
 
 pub fn create_router(state: AppState) -> Router {
@@ -27,10 +27,14 @@ pub fn create_router(state: AppState) -> Router {
         .route("/transactions", get(admin::get_all_transactions))
         .layer(middleware::from_fn(auth_middleware));
 
+    let webhook_routes = Router::new()
+        .route("/twilio", post(webhook::twilio_whatsapp));
+
     Router::new()
         .nest("/api/auth", auth_routes)
         .nest("/api/wallet", wallet_routes)
         .nest("/api/cashier", cashier_routes)
         .nest("/api/admin", admin_routes)
+        .nest("/api/webhooks", webhook_routes)
         .with_state(state)
 }
