@@ -103,12 +103,12 @@ export default function TournamentCalendar() {
 
               {/* Action Buttons */}
               <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-4">
-                <button className="px-8 py-3 bg-[#BF953F] text-black text-[10px] font-black uppercase tracking-widest rounded-sm hover:brightness-110 transition-all">
+                {/* <button className="px-8 py-3 bg-[#BF953F] text-black text-[10px] font-black uppercase tracking-widest rounded-sm hover:brightness-110 transition-all">
                   Notify Me First
-                </button>
-                <button className="px-8 py-3 border border-white/10 text-white text-[10px] font-black uppercase tracking-widest rounded-sm hover:bg-white/5 transition-all">
+                </button> */}
+                <a href="https://wa.me/919115022033" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-[#BF953F] text-black text-[10px] font-black uppercase tracking-widest rounded-sm hover:brightness-110 transition-all">
                   Contact Host
-                </button>
+                </a>
               </div>
             </motion.div>
           </AnimatePresence>

@@ -99,9 +99,9 @@ const CTASection = () => (
     transition={{ delay: 1 }}
     className="flex flex-col md:flex-row items-center justify-center gap-6"
   >
-    <button className="group relative px-12 py-5 bg-gold-metallic text-black font-bold uppercase tracking-[0.2em] text-xs transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(191,149,63,0.4)]">
+    <a href="https://wa.me/919115022033" target="_blank" rel="noopener noreferrer" className="group relative px-12 py-5 bg-gold-metallic text-black font-bold uppercase tracking-[0.2em] text-xs transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(191,149,63,0.4)]">
       Join the Club
-    </button>
+    </a>
 
     {/* <button className="px-12 py-5 border border-white/20 text-white font-bold uppercase tracking-[0.2em] text-xs transition-all hover:bg-white/10 backdrop-blur-sm">
       Become a Member

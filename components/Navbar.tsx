@@ -127,7 +127,7 @@ const SocialLinks = () => (
     className="hidden md:flex items-center gap-4"
   >
     <Link
-      href="https://www.instagram.com/goldendynasty.knp?igsh=MWJmNjNzaXFkdHprOA=="
+      href="https://www.instagram.com/golden_dynasty.knp?igsh=Y25iaXlsd2x4MzFp"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Instagram"
@@ -137,7 +137,7 @@ const SocialLinks = () => (
     </Link>
 
     <Link
-      href="https://www.instagram.com/goldendynasty.knp?igsh=MWJmNjNzaXFkdHprOA=="
+      href="https://www.instagram.com/golden_dynasty.knp?igsh=Y25iaXlsd2x4MzFp"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Instagram"
@@ -147,7 +147,7 @@ const SocialLinks = () => (
     </Link>
 
     <Link
-      href="https://www.instagram.com/goldendynasty.knp?igsh=MWJmNjNzaXFkdHprOA=="
+      href="https://www.instagram.com/golden_dynasty.knp?igsh=Y25iaXlsd2x4MzFp"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Twitter"
@@ -278,7 +278,7 @@ const MobileMenu = ({ isOpen, links, onClose }: MobileMenuProps) => (
           className="flex gap-6 mt-6"
         >
           <Link
-      href="https://www.instagram.com/goldendynasty.knp?igsh=MWJmNjNzaXFkdHprOA=="
+      href="https://www.instagram.com/golden_dynasty.knp?igsh=Y25iaXlsd2x4MzFp"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Twitter"
@@ -287,7 +287,7 @@ const MobileMenu = ({ isOpen, links, onClose }: MobileMenuProps) => (
     <FaInstagram size={24} />
     </Link>
           <Link
-      href="https://www.instagram.com/goldendynasty.knp?igsh=MWJmNjNzaXFkdHprOA=="
+      href="https://www.instagram.com/golden_dynasty.knp?igsh=Y25iaXlsd2x4MzFp"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Twitter"
@@ -297,7 +297,7 @@ const MobileMenu = ({ isOpen, links, onClose }: MobileMenuProps) => (
 
     </Link>
           <Link
-      href="https://www.instagram.com/goldendynasty.knp?igsh=MWJmNjNzaXFkdHprOA=="
+      href="https://www.instagram.com/golden_dynasty.knp?igsh=Y25iaXlsd2x4MzFp"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Twitter"

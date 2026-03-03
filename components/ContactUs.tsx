@@ -13,7 +13,7 @@ export default function ContactUs() {
   const contactDetails: ContactDetail[] = [
     {
       label: "Official Mail",
-      value: "contact@goldendynasty.club",
+      value: "hr@goldendynasty.club",
       icon: (
         <svg
           className="w-5 h-5 md:w-6 md:h-6"
@@ -32,7 +32,7 @@ export default function ContactUs() {
     },
     {
       label: "Direct Call",
-      value: "+91 73767 27375",
+      value: "+91 73477 47675",
       icon: (
         <svg
           className="w-5 h-5 md:w-6 md:h-6"

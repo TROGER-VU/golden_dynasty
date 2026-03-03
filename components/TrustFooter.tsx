@@ -16,17 +16,17 @@ export default function TrustFooter() {
     {
       name: "Instagram",
       path: "M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m4.4 3a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m5-2.25a1.25 1.25 0 0 1 1.25 1.25 1.25 1.25 0 0 1-1.25 1.25 1.25 1.25 0 0 1-1.25-1.25 1.25 1.25 0 0 1 1.25-1.25z",
-      href: "https://www.instagram.com/goldendynasty.knp?igsh=MWJmNjNzaXFkdHprOA=="
+      href: "https://www.instagram.com/golden_dynasty.knp?igsh=Y25iaXlsd2x4MzFp"
     },
     {
       name: "Facebook",
       path: "M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1V12h3l-.5 3H13v6.8c4.56-.93 8-4.96 8-9.8z",
-      href: "https://www.instagram.com/goldendynasty.knp?igsh=MWJmNjNzaXFkdHprOA=="
+      href: "https://www.instagram.com/golden_dynasty.knp?igsh=Y25iaXlsd2x4MzFp"
     },
     {
       name: "X/Twitter",
       path: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z",
-      href: "https://www.instagram.com/goldendynasty.knp?igsh=MWJmNjNzaXFkdHprOA=="
+      href: "https://www.instagram.com/golden_dynasty.knp?igsh=Y25iaXlsd2x4MzFp"
     },
   ];
 
@@ -107,7 +107,7 @@ export default function TrustFooter() {
                   <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <span className="group-hover:text-gray-300 font-mono transition-colors">+91 73767 27375</span>
+              <span className="group-hover:text-gray-300 font-mono transition-colors">+91 91150 22033 <br/> +91 73477 47675 </span>
             </li>
             {/* Email */}
             <li className="flex gap-4 group items-center">
@@ -116,7 +116,7 @@ export default function TrustFooter() {
                   <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <span className="group-hover:text-gray-300 font-mono transition-colors">contact@goldendynasty.club</span>
+              <span className="group-hover:text-gray-300 font-mono transition-colors">hr@goldendynasty.club</span>
             </li>
           </ul>
         </div>
@@ -169,16 +169,16 @@ export default function TrustFooter() {
       </div>
 
       {/* Floating WhatsApp Button */}
-      <motion.a
+      {/* <motion.a
         href="https://wa.me/917376727375"
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="fixed bottom-8 right-8 z-50 flex items-center gap-3 bg-black/60 backdrop-blur-xl border border-[#BF953F]/40 text-white px-6 py-4 rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.5)] transition-all cursor-pointer group hover:border-[#BF953F]"
-      >
+      > */}
         {/* WhatsApp Icon */}
-        <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
+        {/* <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="gold-wa" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#BF953F" />
@@ -194,14 +194,14 @@ export default function TrustFooter() {
 
         <span className="font-bold text-xs uppercase tracking-[0.2em] hidden md:block group-hover:text-[#BF953F] transition-colors">
           Club Manager
-        </span>
+        </span> */}
 
         {/* Ping Indicator */}
-        <span className="absolute -top-1 -right-1 flex h-3 w-3">
+        {/* <span className="absolute -top-1 -right-1 flex h-3 w-3">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#BF953F] opacity-75"></span>
           <span className="relative inline-flex rounded-full h-3 w-3 bg-[#FBF5B7]"></span>
         </span>
-      </motion.a>
+      </motion.a> */}
     </footer>
   );
 }
