@@ -1,2 +1,0 @@
-fn(State<Pool<Postgres>>, Extension<Claims>, axum::Json<ExchangeRequest>) -> impl std::future::Future<Output = Result<axum::http::StatusCode, (axum::http::StatusCode, std::string::String)>> {redeem_chips}
-fn(State<Pool<Postgres>>, Extension<Claims>, axum::Json<ExchangeRequest>) -> impl std::future::Future<Output = Result<axum::http::StatusCode, (axum::http::StatusCode, std::string::String)>> {redeem_chips}: Handler<_, _>
