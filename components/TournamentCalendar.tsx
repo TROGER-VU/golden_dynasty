@@ -106,7 +106,7 @@ export default function TournamentCalendar() {
                 {/* <button className="px-8 py-3 bg-[#BF953F] text-black text-[10px] font-black uppercase tracking-widest rounded-sm hover:brightness-110 transition-all">
                   Notify Me First
                 </button> */}
-                <a href="https://wa.me/919115022033" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-[#BF953F] text-black text-[10px] font-black uppercase tracking-widest rounded-sm hover:brightness-110 transition-all">
+                <a href="https://wa.me/917347747675" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-[#BF953F] text-black text-[10px] font-black uppercase tracking-widest rounded-sm hover:brightness-110 transition-all">
                   Contact Host
                 </a>
               </div>
