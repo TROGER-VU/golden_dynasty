@@ -146,7 +146,7 @@ const SocialLinks = () => (
       <FaFacebook size={24} />
     </Link>
 
-    <Link
+    {/* <Link
       href="https://www.instagram.com/golden_dynasty.knp?igsh=Y25iaXlsd2x4MzFp"
       target="_blank"
       rel="noopener noreferrer"
@@ -154,7 +154,7 @@ const SocialLinks = () => (
       className="text-[#BF953F] hover:text-[#FBF5B7] hover:drop-shadow-[0_0_8px_rgba(191,149,63,0.7)] transition-all duration-300 hover:scale-110"
     >
       <FaTwitter size={24} />
-    </Link>
+    </Link> */}
 
     {/* <a
       href="https://discord.com"
@@ -284,9 +284,9 @@ const MobileMenu = ({ isOpen, links, onClose }: MobileMenuProps) => (
       aria-label="Twitter"
       className="text-[#BF953F] hover:text-[#FBF5B7] hover:drop-shadow-[0_0_8px_rgba(191,149,63,0.7)] transition-all duration-300 hover:scale-110"
     >
-    <FaInstagram size={24} />
+    <FaInstagram size={30} />
     </Link>
-          <Link
+          {/* <Link
       href="https://www.instagram.com/golden_dynasty.knp?igsh=Y25iaXlsd2x4MzFp"
       target="_blank"
       rel="noopener noreferrer"
@@ -295,7 +295,7 @@ const MobileMenu = ({ isOpen, links, onClose }: MobileMenuProps) => (
     >
     <FaTwitter size={24} />
 
-    </Link>
+    </Link> */}
           <Link
       href="https://www.instagram.com/golden_dynasty.knp?igsh=Y25iaXlsd2x4MzFp"
       target="_blank"
@@ -303,7 +303,7 @@ const MobileMenu = ({ isOpen, links, onClose }: MobileMenuProps) => (
       aria-label="Twitter"
       className="text-[#BF953F] hover:text-[#FBF5B7] hover:drop-shadow-[0_0_8px_rgba(191,149,63,0.7)] transition-all duration-300 hover:scale-110"
     >
-          <FaFacebook size={24} />
+          <FaFacebook size={30} />
     </Link>
         </motion.div>
       </motion.div>

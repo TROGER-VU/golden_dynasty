@@ -1,6 +1,6 @@
 "use client";
 
-import React, { JSX } from "react";
+import React, { JSX, useState } from "react";
 import { motion } from "framer-motion";
 
 interface ContactDetail {
@@ -13,7 +13,7 @@ export default function ContactUs() {
   const contactDetails: ContactDetail[] = [
     {
       label: "Official Mail",
-      value: "hr@goldendynasty.club",
+      value: "hr@thegoldendynasty.club",
       icon: (
         <svg
           className="w-5 h-5 md:w-6 md:h-6"
@@ -75,6 +75,92 @@ export default function ContactUs() {
       ),
     },
   ];
+
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    whatsapp: '',
+    email: '',
+    message: ''
+  });
+
+  const [errors, setErrors] = useState({
+    firstName: '',
+    lastName: '',
+    whatsapp: '',
+    email: '',
+    message: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    if (errors[name as keyof typeof errors]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {
+      firstName: '',
+      lastName: '',
+      whatsapp: '',
+      email: '',
+      message: ''
+    };
+
+    if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
+    if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
+    if (!formData.whatsapp.trim()) newErrors.whatsapp = 'WhatsApp number is required';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email is invalid';
+    }
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
+
+    setErrors(newErrors);
+    return Object.values(newErrors).every(error => error === '');
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Message sent successfully!');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          whatsapp: '',
+          email: '',
+          message: ''
+        });
+      } else {
+        const errorData = await response.json();
+        alert(`Failed to send message: ${errorData.error}`);
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section className="bg-black py-16 md:py-14 px-4 md:px-6 relative overflow-hidden border-t border-white/5" id="contact">
@@ -140,7 +226,7 @@ export default function ContactUs() {
         >
           <div className="absolute top-0 right-0 w-16 h-16 md:w-20 md:h-20 border-t border-r border-[#BF953F]/30 pointer-events-none" />
 
-          <form className="space-y-5 md:space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
               <div className="space-y-2">
                 <label className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-[#BF953F] font-bold ml-1">
@@ -148,9 +234,13 @@ export default function ContactUs() {
                 </label>
                 <input
                   type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
                   className="w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 md:py-4 text-sm md:text-base text-white focus:outline-none focus:border-[#BF953F] transition-all placeholder:text-gray-700"
                   placeholder="Akash"
                 />
+                {errors.firstName && <p className="text-red-500 text-xs">{errors.firstName}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-[#BF953F] font-bold ml-1">
@@ -158,9 +248,13 @@ export default function ContactUs() {
                 </label>
                 <input
                   type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
                   className="w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 md:py-4 text-sm md:text-base text-white focus:outline-none focus:border-[#BF953F] transition-all placeholder:text-gray-700"
                   placeholder="Swarnkar"
                 />
+                {errors.lastName && <p className="text-red-500 text-xs">{errors.lastName}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-[#BF953F] font-bold ml-1">
@@ -168,9 +262,13 @@ export default function ContactUs() {
                 </label>
                 <input
                   type="tel"
+                  name="whatsapp"
+                  value={formData.whatsapp}
+                  onChange={handleChange}
                   className="w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 md:py-4 text-sm md:text-base text-white focus:outline-none focus:border-[#BF953F] transition-all placeholder:text-gray-700"
                   placeholder="+91 00000 00000"
                 />
+                {errors.whatsapp && <p className="text-red-500 text-xs">{errors.whatsapp}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-[#BF953F] font-bold ml-1">
@@ -178,9 +276,13 @@ export default function ContactUs() {
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 md:py-4 text-sm md:text-base text-white focus:outline-none focus:border-[#BF953F] transition-all placeholder:text-gray-700"
                   placeholder="akash@gmail.com"
                 />
+                {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
               </div>
             </div>
 
@@ -219,13 +321,21 @@ export default function ContactUs() {
               </label>
               <textarea
                 rows={4}
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 className="w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 md:py-4 text-sm md:text-base text-white focus:outline-none focus:border-[#BF953F] transition-all placeholder:text-gray-700 resize-none"
                 placeholder="Enter your message"
               ></textarea>
+              {errors.message && <p className="text-red-500 text-xs">{errors.message}</p>}
             </div>
 
-            <button className="w-full py-4 md:py-5 bg-[#BF953F] hover:bg-[#FBF5B7] text-black font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] rounded-sm transition-all shadow-lg active:scale-[0.98]">
-              Send Transmission
+            <button 
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full py-4 md:py-5 bg-[#BF953F] hover:bg-[#FBF5B7] disabled:bg-gray-500 text-black font-black uppercase tracking-[0.3em] md:tracking-[0.4em] text-[10px] rounded-sm transition-all shadow-lg active:scale-[0.98] disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? 'Sending...' : 'Send Transmission'}
             </button>
           </form>
         </motion.div>
