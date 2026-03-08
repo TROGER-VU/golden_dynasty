@@ -81,7 +81,7 @@ export default function EnhancedMapSection() {
                 <div className="space-y-6">
                   <ContactDetail icon={<FaMapMarkerAlt />} title="Address" content="Rajawat The Fern, Fatehpur Roshnai Delhi, Kanpur Highway, Industrial Area, Rania, Kanpur, Uttar Pradesh 209101" />
                   {/* <ContactDetail icon={<FaClock />} title="Hours" content="24/7 Operations • Members Only" /> */}
-                  <ContactDetail icon={<FaPhoneAlt />} title="Contact" content="+91 73767 27375" />
+                  <ContactDetail icon={<FaPhoneAlt />} title="Contact" content="+91 73477 47675" />
                   <ContactDetail icon={<FaEnvelope />} title="Inquiries" content="hr@thegoldendynasty.club" />
                 </div>
 
