@@ -3,6 +3,7 @@
 import React, { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
+import {FaFingerprint} from 'react-icons/fa';
 
 interface Protocol {
   id: string;
@@ -49,9 +50,7 @@ const protocols: Protocol[] = [
     stats: "Verified Only",
     image: "https://media.istockphoto.com/id/1143801284/photo/mature-man-gambling.webp?a=1&b=1&s=612x612&w=0&k=20&c=rILylt4o3v0tX4q5VkvdcsA0rX-VowQhecuCz2zeBCg=",
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-5.09 4.83-9.063 10-9.063 1.223 0 2.387.214 3.474.607" />
-      </svg>
+      <FaFingerprint size={24}/>
     )
   }
 ];
@@ -183,10 +182,30 @@ export default function ProtocolSection() {
           <p className="text-gray-600 text-[10px] uppercase tracking-widest font-medium">
             Recognized by the Indian Mind Sports Association
           </p>
-          <button className="text-[#BF953F]/70 text-[10px] font-bold uppercase tracking-[0.3em] flex items-center gap-3 group hover:text-[#BF953F] transition-colors">
-            Download Rulebook 
-            <span className="w-8 h-[1px] bg-[#BF953F]/30 group-hover:w-16 group-hover:bg-[#BF953F] transition-all" />
-          </button>
+          <a
+            href="/poker_rules.pdf"
+            download="Golden-Dynasty-Rulebook.pdf"
+            className="relative inline-flex items-center gap-3 px-6 py-3 rounded-full 
+            bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] 
+            text-black text-xs font-bold uppercase tracking-[0.25em] 
+            shadow-lg shadow-[#BF953F]/20
+            hover:scale-105 hover:shadow-[#BF953F]/40
+            transition-all duration-300 group"
+          >
+            <svg
+              className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-[2px]"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v10m0 0l-4-4m4 4l4-4M5 19h14" />
+            </svg>
+
+            Download Rulebook
+
+            <span className="absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+          </a>
         </motion.div>
 
       </div>
