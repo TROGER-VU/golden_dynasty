@@ -2,6 +2,7 @@
 
 import React, { JSX, useState } from "react";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 interface ContactDetail {
   label: string;
@@ -142,7 +143,7 @@ export default function ContactUs() {
       });
 
       if (response.ok) {
-        alert('Message sent successfully!');
+        toast.success('Message sent successfully!');
         setFormData({
           firstName: '',
           lastName: '',
@@ -152,11 +153,11 @@ export default function ContactUs() {
         });
       } else {
         const errorData = await response.json();
-        alert(`Failed to send message: ${errorData.error}`);
+        toast.error(`Failed to send message: ${errorData.error}`);
       }
     } catch (error) {
       console.error('Error sending message:', error);
-      alert('Failed to send message. Please try again.');
+      toast.error('Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }

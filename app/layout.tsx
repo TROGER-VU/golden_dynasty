@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import type { Viewport } from "next";
+import { Toaster } from "react-hot-toast";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -39,6 +40,7 @@ export default function RootLayout({
         className={`${playfair.variable} ${montserrat.variable} font-sans antialiased bg-[#050505] text-white selection:bg-amber-500/30 selection:text-amber-200`}
       >
         {children}
+        <Toaster position="top-center" />
       </body>
     </html>
   );
